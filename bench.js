@@ -7,14 +7,26 @@ function getMemoryUsageOfReference(ref) {
   return serialized.length; // The size of the serialized Buffer in bytes
 }
 
+function generateSeededColor(seed = 1_000_000) {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash << 5) - hash + seed.charCodeAt(i);
+    hash |= 0; // Convert to 32bit integer
+  }
+  hash = (hash * 16807) % 2147483647; // A common multiplier for randomness
+  const random = (hash & 0xffffff) / 0xffffff; // Return a normalized value [0, 1]
+  const color = `#${Math.floor(random * 0xffffff)
+    .toString(16)
+    .padStart(6, "0")}`;
+  return color;
+}
+
 function testSimpleFunction(amount, analyzeMemory = true) {
   const startTime = performance.now();
 
   let color = "";
   for (let i = 0; i < amount; i++) {
-    color = `#${Math.floor(Math.random() * 0xffffff)
-      .toString(16)
-      .padStart(6, "0")}`;
+    color = generateSeededColor();
   }
   const endTime = performance.now();
   const usedMemory = analyzeMemory ? getMemoryUsageOfReference(color) : 0;
