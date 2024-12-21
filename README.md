@@ -1,6 +1,4 @@
-# Fast Color Generator
-
-![Build](https://github.com/UltraCakeBakery/FastBooleanArray/actions/workflows/ci.yml/badge.svg?event=build)
+# Fast Color Generator ![Build](https://github.com/UltraCakeBakery/FastBooleanArray/actions/workflows/ci.yml/badge.svg?event=build)
 
 Fast Color Generator is a high-performance JavaScript library for generating pseudo-random colors efficiently. This utility uses a Linear Congruential Generator (LCG) for deterministic color generation, making it ideal for applications requiring random or seeded colors, such as data visualization, gaming, and procedural art.
 
