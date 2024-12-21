@@ -12,10 +12,6 @@ Fast Color Generator is a high-performance JavaScript library for generating pse
 
 ---
 
-## Why Use Fast Color Generator?
-
----
-
 ## Installation
 
 Install the package via npm:
