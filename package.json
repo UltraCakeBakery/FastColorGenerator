@@ -1,0 +1,51 @@
+{
+  "name": "fast-color-generator",
+  "version": "1.0.0",
+  "homepage": "https://github.com/UltraCakeBakery/FastColorGenerator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UltraCakeBakery/FastColorGenerator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UltraCakeBakery/FastColorGenerator/issues",
+    "email": "fast-boolean-array@managing.software"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "check-types": "npx --yes @arethetypeswrong/cli --pack .",
+    "build": "tsup src/index.ts --dts --format cjs,esm --clean --sourcemap --minify"
+  },
+  "keywords": [
+    "boolean",
+    "array",
+    "fast",
+    "efficient",
+    "map"
+  ],
+  "author": "Jack van der Bil  <jack@managing.software> (https://jackvanderbilt.nl)",
+  "license": "MIT",
+  "description": "",
+  "engines": {
+    "node": ">=0.10.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
