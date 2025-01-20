@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   tests: # Ensure tests pass before releasing
-    uses: ./.github/workflows/tests.yml # Reference the tests workflow
+    uses: ./tests.yml # Reference the tests workflow
     secrets: inherit # Pass repository secrets if needed
 
   release:
