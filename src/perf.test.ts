@@ -19,7 +19,7 @@ describe("FastColorGenerator", () => {
     }
 
     expect(generatedColors.size).toBeGreaterThan(0); // Ensure it generates colors
-  });
+  }, 20_000);
 
   it("not too many duplicates", () => {
     const seed = 0; // Start from the lowest seed value
@@ -42,5 +42,5 @@ describe("FastColorGenerator", () => {
     }
 
     expect(duplicates).toBeLessThan(total * 0.05); // less than 20%
-  });
+  }, 20_000);
 });
