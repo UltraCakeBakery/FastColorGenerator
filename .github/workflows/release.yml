@@ -34,6 +34,9 @@ jobs:
       - name: Run build
         run: pnpm build
 
+      - name: test
+        run: echo ${{ secrets.NPM_TOKEN }}
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
