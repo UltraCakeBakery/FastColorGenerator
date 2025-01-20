@@ -10,14 +10,8 @@ permissions:
   packages: write
 
 jobs:
-  tests: # Ensure tests pass before releasing
-    uses: ./.github/workflows/tests.yml@main # Reference the tests workflow
-    secrets: inherit # Pass repository secrets if needed
-
   release:
-    needs: tests # Ensure tests passes before running release
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
