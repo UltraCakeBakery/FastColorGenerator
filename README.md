@@ -5,10 +5,10 @@ Fast Color Generator is a high-performance JavaScript library for generating pse
 ## Features
 
 - **High-Performance**: Efficient color generation with a minimal memory footprint (Up to 2x faster!)
-- **Predictability and Seedable**: Deterministic color generation based on a seed valu, allowing you to generates the same sequence of colors consistently.
+- **Predictability and Seedable**: Deterministic color generation based on a seed value, allowing you to generate the same sequence of colors consistently.
 - **Versatile API**: Easy-to-use getter and setter methods for hex and RGB values.
 - **Lightweight**: No external dependencies, perfect for high-performance use cases.
-- **Type-safe and tested**: Written in typescript with zero errors, 100% test coverage through vitest unit testing..
+- **Type-safe and tested**: Written in typescript and has a 100% test coverage through vitest unit testing.
 
 ---
 
@@ -36,16 +36,12 @@ const generator = new FastColorGenerator(12345);
 // Generate the next color
 generator.next();
 
-// Get the current color in hex format
+// Get the current color
 console.log(generator.hex); // Output: #3a2f1c (example)
-
-// Get the current color as an RGB object
 console.log(generator.rgb); // Output: { r: 58, g: 47, b: 28 }
 
-// Set a specific color using a hex string
+// Set a specific color
 generator.hex = "#ff8800";
-
-// Set a specific color using an RGB object
 generator.rgb = { r: 255, g: 136, b: 0 };
 ```
 
@@ -55,7 +51,7 @@ generator.rgb = { r: 255, g: 136, b: 0 };
 
 ### `new FastColorGenerator(seed?: number)`
 
-Creates a new Fast Color Generator instance. If no seed is provided, the current timestamp is used.
+Creates a new Fast Color Generator instance. If no seed is provided, the current date as an integer is used.
 
 - **Parameters**:
   - `seed` (number): A 32-bit integer used as the starting state.
@@ -116,13 +112,7 @@ Gets or sets the current color as an RGB object.
 | 1,000,000        | 123.56793            | 58.55502                  |
 | 16,777,216       | 2053.39782           | 946.79718                 |
 
-The Fast Color Generator is more efficient for large-scale color generation, outperforming simple implementations significantly as the dataset grows. However, due to the initialization cost of its constructor, it should be used with caution for small-scale operations.
-
-While we couldn't benchmark it directly, we observed that the garbage collector tends to manage the Fast Color Generator more efficiently, likely because it involves less overhead:
-
-The Math.random() and string operations (such as toString and padStart) in the simple function create intermediate objects and strings, which the garbage collector must handle.
-The Fast Color Generator relies on more direct computations (bitwise operations) with fewer intermediate objects, reducing the load on the garbage collector.
-Therefore, we assume that using this library helps improve the performance of the rest of your code, as it minimizes the compute power needed for memory allocation compared to more common, leaving more breathing room.
+The Fast Color Generator is more efficient for large-scale color generation, outperforming even the most simple random color generator implementation significantly as the dataset grows. However, due to the initialization cost of its constructor, it should be used with caution for small-scale operations.
 
 ---
 
