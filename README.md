@@ -118,7 +118,7 @@ The Fast Color Generator is more efficient for large-scale color generation, out
 
 ## Acknowledgements
 
-The [Linear Congruential Generator (LCG)](https://en.wikipedia.org/wiki/Linear_congruential_generator) algorithm used in this library was originally published in 1958 by W. E. Thomson and A. Rotenberg. Its simplicity and speed make it a popular choice for pseudo-random number generation.
+The [Linear Congruential Generator (LCG)](https://en.wikipedia.org/wiki/Linear_congruential_generator) algorithm used in this library was originally published in 1958 by W. E. Thomson and A. Rotenberg.
 
 ---
 
